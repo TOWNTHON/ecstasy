@@ -1,4 +1,4 @@
-require "wiringpi.rb"
+require 'wiringpi'
 s = WiringPi::GPIO.new
 
 s.mode(18, PWM_OUTPUT)
