@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
 
-gem 'wiringpi2'
+gem 'wiringpi'
