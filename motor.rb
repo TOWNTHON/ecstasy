@@ -1,4 +1,6 @@
-require "wiringpi.rb"
+require 'bundler'
+Bundler.setup
+Bundler.require
 
 s = WiringPi::GPIO.new
 
