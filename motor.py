@@ -22,6 +22,7 @@ GPIO.setmode(GPIO.BCM)
 
 # GPIO 12番を使用 (PWM 0)
 GPIO.setup(18, GPIO.OUT)
+GPIO.setup(21, GPIO.IN)
 # 20ms / 50Hzに設定、らしい
 servo = GPIO.PWM(18, 50)
 
@@ -31,14 +32,16 @@ servo.start(0.0)
 # ChangeDutyCycleに渡す値は 0.0 <= dc <= 100.0
 # ……のはずだが、なぜか2から12の間で動作している。
 dc = 0.0
+
 while True:
 
-  for dc in range(2, 12, 1):
-    servo.ChangeDutyCycle(dc)
-    print("dc = %d" % dc)
-    time.sleep(0.1)
+  if GPIO.input(21) == 0:
+    for dc in range(2, 12, 1):
+      servo.ChangeDutyCycle(dc)
+      print("dc = %d" % dc)
+      time.sleep(0.1)
 
-  for dc in range(12, 2, -1):
-    servo.ChangeDutyCycle(dc)
-    print("dc = %d" % dc)
-    time.sleep(0.1)
+    for dc in range(12, 2, -1):
+      servo.ChangeDutyCycle(dc)
+      print("dc = %d" % dc)
+      time.sleep(0.1)
