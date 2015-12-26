@@ -1,12 +1,9 @@
-require 'bundler'
-Bundler.setup
-Bundler.require
+require "wiringpi.rb"
+s = WiringPi::GPIO.new
 
-io = WiringPi::GPIO.new do |gpio|
-  gpio.pin_mode(18, WiringPi::OUTPUT)
-  gpio.pwm_set_mode(0) # PWM_MODE_MS
-  gpio.pwm_set_clock(400)
-  gpio.pwm_set_range(1024)
-end
+s.mode(18, PWM_OUTPUT)
+s.pwmSetMode(0)
+s.pwmSetClock(400)
+s.pwmSetRange(1024)
 
-io.soft_pwm_write(18, 100)
+s.pwmWrite(18, 100)
