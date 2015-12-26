@@ -35,7 +35,7 @@ dc = 0.0
 
 while True:
 
-  if GPIO.input(21) == 0:
+  if GPIO.input(21) == 1:
     for dc in range(2, 12, 1):
       servo.ChangeDutyCycle(dc)
       print("dc = %d" % dc)
