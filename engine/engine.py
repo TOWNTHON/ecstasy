@@ -7,9 +7,6 @@ import signal
 import sys
 
 def exit_handler(signal, frame):
-  """
-  Ctrl+Cが押されたときにデバイスを初期状態に戻して終了する。
-  """
   print("\nExit")
   servo.stop()
   GPIO.cleanup()
