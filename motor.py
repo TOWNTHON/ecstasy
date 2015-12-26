@@ -15,22 +15,16 @@ def exit_handler(signal, frame):
   GPIO.cleanup()
   sys.exit(0)
 
-# 終了処理用のシグナルハンドラを準備
 signal.signal(signal.SIGINT, exit_handler)
 
 GPIO.setmode(GPIO.BCM)
 
-# GPIO 12番を使用 (PWM 0)
 GPIO.setup(18, GPIO.OUT)
 GPIO.setup(21, GPIO.IN)
-# 20ms / 50Hzに設定、らしい
-servo = GPIO.PWM(18, 50)
 
-# 初期化
+servo = GPIO.PWM(18, 50)
 servo.start(0.0)
 
-# ChangeDutyCycleに渡す値は 0.0 <= dc <= 100.0
-# ……のはずだが、なぜか2から12の間で動作している。
 dc = 0.0
 
 while True:
