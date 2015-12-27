@@ -15,16 +15,16 @@ class Buzzer:
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
-        buzzer.start(50) # start BZ1 duty 50%
+        self.output.start(50) # start BZ1 duty 50%
         time.sleep(5)
 
-        buzzer.ChangeFrequency(500) # change frequency 500 Hz
+        self.output.ChangeFrequency(500) # change frequency 500 Hz
         time.sleep(5)
 
-        buzzer.ChangeFrequency(500) # change frequency 500 Hz
+        self.output.ChangeFrequency(500) # change frequency 500 Hz
         time.sleep(5)
 
-        buzzer.ChangeDutyCycle(10) # change duty cycle 10 %
+        self.output.ChangeDutyCycle(10) # change duty cycle 10 %
         time.sleep(5)
 
-        buzzer.stop() # stop buzzer
+        self.output.stop() # stop self.output
