@@ -32,8 +32,10 @@ class Buzzer:
         self.output.start(50)
 
         for note in StrawberrySex.CHART:
-            if not note == Scale.REST:
-                self.output.ChangeFrequency(Scale.SCALE[note[0]])
+            freq = note[0]
+
+            if not freq == Scale.REST:
+                self.output.ChangeFrequency(Scale.SCALE[freq])
 
             time.sleep(note[1]/4.0)
 
