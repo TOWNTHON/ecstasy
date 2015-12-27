@@ -18,7 +18,7 @@ class Buzzer:
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
-        thread = threading.Thread(target=_play, name="thread")
+        thread = threading.Thread(target=self._play, name="thread")
         thread.start()
 
     def _play(self):
