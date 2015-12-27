@@ -20,8 +20,8 @@ class Engine:
 
     # 1ループごとの処理
     def __cycle(self):
-        if water_sensor.is_wet():
-            servo.action()
+        if self.water_sensor.is_wet():
+            self.servo.action()
 
     # デストラクタ
     def __del__(self):
