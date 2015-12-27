@@ -20,7 +20,7 @@ CHART = [
     (Scale.AS1, 2),
     (Scale.AS1, 1),
     (Scale.AS1, 2),
-    (Scale.CS1, 4),
+    (Scale.GS0, 4),
     (Scale.REST, 4),
 
     ]
