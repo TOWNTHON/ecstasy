@@ -25,7 +25,9 @@ class Engine:
     def __cycle(self):
         if self.water_sensor.is_wet():
             self.servo.action()
-            self.buzzer.play()
+
+            if not self.buzzer.is_playing:
+                self.buzzer.play()
 
     # デストラクタ
     def __del__(self):

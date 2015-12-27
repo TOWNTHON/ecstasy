@@ -17,9 +17,14 @@ class Buzzer:
         GPIO.setup(Buzzer.PORT, GPIO.OUT)
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
+    # 音楽を再生する
     def play(self):
-        thread = threading.Thread(target=self._play, name="thread")
-        thread.start()
+        self.thread = threading.Thread(target=self._play, name="thread")
+        self.thread.start()
+
+    # 音楽が再生中かどうか調べる
+    def is_playing(self):
+        return self.thread is not None and  self.thread.is_alive()
 
     def _play(self):
         self.output.start(50)
