@@ -40,6 +40,6 @@ class Buzzer:
 
         for note in Buzzer.CHART:
             self.output.ChangeFrequency(Buzzer.SCALE[note[0]])
-            time.sleep(note[1]/2.0)
+            time.sleep(note[1]/3.0)
 
         self.output.stop()
