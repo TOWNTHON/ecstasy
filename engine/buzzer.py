@@ -18,10 +18,10 @@ class Buzzer:
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
-        thread = threading.Thread(target=__play, name="thread")
+        thread = threading.Thread(target=_play, name="thread")
         thread.start()
 
-    def __play(self):
+    def _play(self):
         self.output.start(50)
 
         for note in Doremi.CHART:
