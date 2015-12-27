@@ -10,11 +10,11 @@ class WaterSensor:
 
     # コンストラクタ
     def __init__(self):
-        GPIO.setup(PORT, GPIO.IN)
+        GPIO.setup(WaterSensor.PORT, GPIO.IN)
 
     # センサーが水に濡れているかどうかを調べる
     def is_wet(self):
-        return GPIO.input(PORT) == 0
+        return GPIO.input(WaterSensor.PORT) == 0
 
     # デストラクタ
     def __del__(self):

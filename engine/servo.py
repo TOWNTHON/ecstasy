@@ -11,9 +11,9 @@ class Servo:
 
     # コンストラクタ
     def __init__(self):
-        GPIO.setup(PORT, GPIO.OUT)
+        GPIO.setup(Servo.PORT, GPIO.OUT)
 
-        self.output = GPIO.PWM(PORT, 50)
+        self.output = GPIO.PWM(Servo.PORT, 50)
         self.output.start(0.0)
 
     # サーボを動かす
