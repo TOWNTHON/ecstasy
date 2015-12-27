@@ -9,22 +9,18 @@ class Buzzer:
     # GPIOポート番号
     PORT = 20
 
+    DOREMI = [220.0, 246.9, 277.2, 293.7, 329.6, 370.0, 415.3, 440.0]
+
     # コンストラクタ
     def __init__(self):
         GPIO.setup(Buzzer.PORT, GPIO.OUT)
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
-        self.output.start(50) # start BZ1 duty 50%
-        time.sleep(5)
+        self.output.start(50)
 
-        self.output.ChangeFrequency(500) # change frequency 500 Hz
-        time.sleep(5)
+        for freq in doremi:
+            self.output.ChangeFrequency(freq)
+            time.sleep(1)
 
-        self.output.ChangeFrequency(500) # change frequency 500 Hz
-        time.sleep(5)
-
-        self.output.ChangeDutyCycle(10) # change duty cycle 10 %
-        time.sleep(5)
-
-        self.output.stop() # stop self.output
+        self.output.stop()
