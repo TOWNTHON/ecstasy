@@ -39,7 +39,7 @@ CHART = [
     (Scale.F0, 2),
     (Scale.G0, 3),
     (Scale.F0, 2),
-    (scale.G0, 1),
+    (Scale.G0, 1),
     (Scale.A1, 3),
 
     (Scale.REST, 4)
