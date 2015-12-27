@@ -23,8 +23,8 @@ class Engine:
 
     # 1ループごとの処理
     def __cycle(self):
-        if not self.water_sensor.is_wet():
-            # self.servo.action()
+        if self.water_sensor.is_wet():
+            self.servo.action()
 
             if not self.buzzer.is_playing():
                 self.buzzer.play()
