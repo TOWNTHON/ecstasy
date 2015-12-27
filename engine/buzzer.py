@@ -2,23 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import RPi.GPIO as GPIO
-import chart.scale as Scale 
+import chart.scale as Scale
+import chart.doremi as Doremi
 import time
 
 # スピーカー制御用クラス
 class Buzzer:
     # GPIOポート番号
     PORT = 20
-
-    CHART = [
-        (Scale.C1, 3),
-        (Scale.D1, 1),
-        (Scale.E1, 3),
-        (Scale.C1, 1),
-        (Scale.E1, 2),
-        (Scale.C1, 2),
-        (Scale.E1, 4),
-        ]
 
     # コンストラクタ
     def __init__(self):
@@ -28,7 +19,7 @@ class Buzzer:
     def play(self):
         self.output.start(50)
 
-        for note in Buzzer.CHART:
+        for note in Doremi.CHART:
             self.output.ChangeFrequency(Scale.SCALE[note[0]])
             time.sleep(note[1]/3.0)
 
