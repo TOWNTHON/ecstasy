@@ -3,7 +3,7 @@
 
 import RPi.GPIO as GPIO
 import servo as Servo
-import time
+import water_sensor as WaterSensor
 import signal
 import sys
 
@@ -20,7 +20,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(21, GPIO.IN)
 
 servo = Servo()
+water_sensor = WaterSensor()
 
 while True:
-    if GPIO.input(21) == 0:
+    if water_sensor.is_wet():
         servo.action()
