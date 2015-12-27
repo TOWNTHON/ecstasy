@@ -38,7 +38,7 @@ CHART = [
     (Scale.DS0, 1),
     (Scale.F0, 2),
     (Scale.G0, 3),
-    (Scale.f0, 2),
+    (Scale.F0, 2),
     (scale.G0, 1),
     (Scale.A1, 3),
 
