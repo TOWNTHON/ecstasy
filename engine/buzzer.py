@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import chart.scale as Scale
 import chart.doremi as Doremi
 import time
+import threading
 
 # スピーカー制御用クラス
 class Buzzer:
@@ -17,6 +18,10 @@ class Buzzer:
         self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
+        thread = threading.Thread(target=__play, name="thread")
+        thread.start()
+
+    def __play(self):
         self.output.start(50)
 
         for note in Doremi.CHART:
