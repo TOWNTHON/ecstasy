@@ -16,7 +16,7 @@ class Engine:
     # エンジンを起動する
     def run(self):
         while True:
-            __cycle()
+            self.__cycle()
 
     # 1ループごとの処理
     def __cycle(self):
