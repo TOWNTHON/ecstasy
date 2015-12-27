@@ -13,5 +13,3 @@ CHART = [
     (Scale.AS1, 2),
     (Scale.CS1, 4),
     ]
-
-
