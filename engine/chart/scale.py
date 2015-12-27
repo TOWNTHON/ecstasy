@@ -17,6 +17,8 @@ G1 = "G1"
 GS1 = "GS1"
 A2 = "A2"
 
+REST = "REST"
+
 SCALE = {
         G0: 196.0,
         GS0: 207.7,
