@@ -3,7 +3,7 @@
 
 import RPi.GPIO as GPIO
 import chart.scale as Scale
-import chart.doremi as Doremi
+import chart.strawberry_sex as StrawberrySex
 import time
 import threading
 
@@ -31,7 +31,7 @@ class Buzzer:
     def _play(self):
         self.output.start(50)
 
-        for note in Doremi.CHART:
+        for note in StrawberrySex.CHART:
             self.output.ChangeFrequency(Scale.SCALE[note[0]])
             time.sleep(note[1]/3.0)
 
