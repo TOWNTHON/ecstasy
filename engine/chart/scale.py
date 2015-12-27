@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+G0 = "G0"
+GS0 = "GS0"
 A1 = "A1"
 AS1 = "AS1"
 B1 = "B1"
