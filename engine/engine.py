@@ -3,6 +3,7 @@
 
 import RPi.GPIO as GPIO
 from servo import Servo
+from buzzer import Buzzer
 from water_sensor import WaterSensor
 
 class Engine:
@@ -10,8 +11,10 @@ class Engine:
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
 
-        self.servo = Servo()
         self.water_sensor = WaterSensor()
+
+        self.servo = Servo()
+        self.buzzer = Buzzer()
 
     # エンジンを起動する
     def run(self):
@@ -22,6 +25,7 @@ class Engine:
     def __cycle(self):
         if self.water_sensor.is_wet():
             self.servo.action()
+            self.buzzer.play()
 
     # デストラクタ
     def __del__(self):
