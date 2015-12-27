@@ -14,10 +14,10 @@ class Buzzer:
             "D1": 246.9,
             "E1": 277.2,
             "F1": 293.7,
-            "G1":329.6,
-            "A1":370.0,
-            "B1":415.3,
-            "C2":440.0
+            "G1": 329.6,
+            "A1": 370.0,
+            "B1": 415.3,
+            "C2": 440.0
             }
 
     CHART = [
@@ -27,7 +27,7 @@ class Buzzer:
         ("C1", 1),
         ("E1", 2),
         ("C1", 2),
-        ("E1", 5),
+        ("E1", 4),
         ]
 
     # コンストラクタ
@@ -40,6 +40,6 @@ class Buzzer:
 
         for note in Buzzer.CHART:
             self.output.ChangeFrequency(Buzzer.SCALE[note[0]])
-            time.sleep(note[1])
+            time.sleep(note[1]/2.0)
 
         self.output.stop()
