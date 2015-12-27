@@ -8,6 +8,7 @@ import time
 class Servo:
     # GPIOポート番号
     PORT = 18
+    INTERVAL = 0.05
 
     # コンストラクタ
     def __init__(self):
@@ -20,11 +21,11 @@ class Servo:
     def action(self):
         for dc in range(2, 12, 1):
             self.output.ChangeDutyCycle(dc)
-            time.sleep(0.05)
+            time.sleep(Servo.INTERVAL)
 
         for dc in range(12, 2, -1):
             self.output.ChangeDutyCycle(dc)
-            time.sleep(0.05)
+            time.sleep(Servo.INTERVAL)
 
     # デストラクタ
     def __del__(self):
