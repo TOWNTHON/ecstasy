@@ -24,7 +24,7 @@ class Buzzer:
 
     # 音楽が再生中かどうか調べる
     def is_playing(self):
-        return self.thread is not None and  self.thread.is_alive()
+        return self.thread is not None and self.thread.is_alive()
 
     def _play(self):
         self.output.start(50)

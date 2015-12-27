@@ -26,7 +26,7 @@ class Engine:
         if self.water_sensor.is_wet():
             self.servo.action()
 
-            if not self.buzzer.is_playing:
+            if not self.buzzer.is_playing():
                 self.buzzer.play()
 
     # デストラクタ
