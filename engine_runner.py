@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import engine.engine as Engine
+from engine.engine import Engine
 
 engine = Engine()
 engine.run()

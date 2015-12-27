@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import RPi.GPIO as GPIO
-import servo as Servo
-import water_sensor as WaterSensor
+from servo import Servo
+from water_sensor import WaterSensor
 
 class Engine:
     # コンストラクタ
