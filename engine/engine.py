@@ -4,21 +4,25 @@
 import RPi.GPIO as GPIO
 import servo as Servo
 import water_sensor as WaterSensor
-import signal
-import sys
 
-def exit_handler(signal, frame):
-    GPIO.cleanup()
-    sys.exit(0)
+class Engine:
+    # コンストラクタ
+    def __init__(self):
+        GPIO.setmode(GPIO.BCM)
 
-signal.signal(signal.SIGINT, exit_handler)
+        self.servo = Servo()
+        self.water_sensor = WaterSensor()
 
+    # エンジンを起動する
+    def run(self):
+        while True:
+            __cycle()
 
-GPIO.setmode(GPIO.BCM)
+    # 1ループごとの処理
+    def __cycle(self):
+        if water_sensor.is_wet():
+            servo.action()
 
-servo = Servo()
-water_sensor = WaterSensor()
-
-while True:
-    if water_sensor.is_wet():
-        servo.action()
+    # デストラクタ
+    def __del__(self):
+        GPIO.cleanup()
