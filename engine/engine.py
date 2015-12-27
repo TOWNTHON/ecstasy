@@ -17,7 +17,6 @@ signal.signal(signal.SIGINT, exit_handler)
 
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(21, GPIO.IN)
 
 servo = Servo()
 water_sensor = WaterSensor()
