@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import signal
+import sys
 from engine.engine import Engine
 
 # エンジン終了処理
