@@ -36,7 +36,7 @@ class Buzzer:
                 self.output.start(50)
                 self.output.ChangeFrequency(Scale.SCALE[freq])
 
-            time.sleep(note[1]/4.0)
+            time.sleep(note[1]/5.0)
 
             if not freq == Scale.REST:
                 self.output.stop()

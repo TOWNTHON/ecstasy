@@ -23,4 +23,14 @@ CHART = [
     (Scale.GS0, 4),
     (Scale.REST, 4),
 
+    (Scale.GS0, 2),
+    (Scale.G0, 2),
+    (Scale.G0, 2),
+    (Scale.G0, 1),
+    (Scale.F0, 5),
+    (Scale.F0, 1),
+    (Scale.F0, 2),
+    (Scale.DS0, 3),
+
+
     ]
