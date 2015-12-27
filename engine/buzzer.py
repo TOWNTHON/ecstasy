@@ -11,7 +11,7 @@ class Buzzer:
 
     # コンストラクタ
     def __init__(self):
-        GPIO.setup(Speaker.PORT, GPIO.OUT)
+        GPIO.setup(Buzzer.PORT, GPIO.OUT)
         self.output = GPIO.PWM(BZ1, 1000)
 
     def play(self):
