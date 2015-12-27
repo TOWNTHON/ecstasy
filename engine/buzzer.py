@@ -19,7 +19,7 @@ class Buzzer:
     def play(self):
         self.output.start(50)
 
-        for freq in doremi:
+        for freq in Buzzer.DOREMI:
             self.output.ChangeFrequency(freq)
             time.sleep(1)
 
