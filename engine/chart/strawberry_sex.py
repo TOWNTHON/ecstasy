@@ -32,5 +32,12 @@ CHART = [
     (Scale.F0, 2),
     (Scale.DS0, 3),
 
+    (Scale.D0, 1),
+    (Scale.D0, 1),
+    (Scale.DS0, 1),
+    (Scale.F0, 2),
+    (Scale.G0, 3),
+
+    (Scale.REST, 4)
 
     ]
