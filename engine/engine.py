@@ -8,8 +8,6 @@ import signal
 import sys
 
 def exit_handler(signal, frame):
-    print("\nExit")
-    servo.stop()
     GPIO.cleanup()
     sys.exit(0)
 
