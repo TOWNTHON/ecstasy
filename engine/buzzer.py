@@ -12,7 +12,7 @@ class Buzzer:
     # コンストラクタ
     def __init__(self):
         GPIO.setup(Buzzer.PORT, GPIO.OUT)
-        self.output = GPIO.PWM(BZ1, 1000)
+        self.output = GPIO.PWM(Buzzer.PORT, 1000)
 
     def play(self):
         buzzer.start(50) # start BZ1 duty 50%
